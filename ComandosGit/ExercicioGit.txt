@@ -1,0 +1,7 @@
+Dentro do seu repositorio
+	1 - Crie uma pasta chamada
+		Aula1
+	2 - Crie 5 arquivos com nome e conteudo criado por você
+	
+	3 - Envie todos os arquivos para o git.	
+		obs: Envie um de cada vez
