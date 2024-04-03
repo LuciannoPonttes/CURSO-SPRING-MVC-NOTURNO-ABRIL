@@ -1,0 +1,7 @@
+Crie um projeto web com uma pagina HTML que tenha um formulario com os seguintes campos:
+
+Nome
+Idade
+Salario
+Endereço
+
