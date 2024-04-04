@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.rowset.serial.SerialException;
 
 //Controlador
-public class LoginServlet extends HttpServlet {
+public class HelloServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
