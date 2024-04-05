@@ -12,10 +12,6 @@ public class Inicio {
 		return "index";
 	}
 	
-	@GetMapping("/cadastroJogadorRota")//Rota
-	public String cadastro() {
-		
-		return "cadastroJogador";//Arquivo HTML
-	}
+	
 
 }
