@@ -1,0 +1,14 @@
+Crie um projeto SpringBoot chamado cadastroMotorista:
+
+Motorista:
+	Nome
+	Endereço
+	Idade
+	Quantidade de horas trabalhadas por mes
+	Valor da hora trabalhada
+	Salario
+
+O salario deve ser calculado com base nas horas e no valor das horas
+
+Salve os cadastros no banco de dados usando JPA.
+
