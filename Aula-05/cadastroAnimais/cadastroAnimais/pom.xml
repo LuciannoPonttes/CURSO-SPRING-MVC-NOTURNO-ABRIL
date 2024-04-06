@@ -7,15 +7,19 @@
 		<version>3.2.4</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.impacta.cadastroTime</groupId>
-	<artifactId>cadastroTime</artifactId>
+	<groupId>cadastroAnimais</groupId>
+	<artifactId>cadastroAnimais</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cadastroTime</name>
-	<description>cadastroTime</description>
+	<name>cadastroAnimais</name>
+	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -31,7 +35,6 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -39,15 +42,11 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-
-		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.17</version>
+			<version>8.0.33</version>
 		</dependency>
+
 
 	</dependencies>
 

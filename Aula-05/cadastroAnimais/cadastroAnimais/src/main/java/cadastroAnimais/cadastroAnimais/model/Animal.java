@@ -1,4 +1,4 @@
-package com.impacta.cadastroTime.cadastroTime.model;
+package cadastroAnimais.cadastroAnimais.model;
 
 import java.io.Serializable;
 
@@ -9,37 +9,37 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Jogador implements Serializable {
+public class Animal implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id // Chave Primaria 
+	@GeneratedValue(strategy = GenerationType.AUTO) // Informa que vai gerar automatico
 	private long id;
 	
 	private String nome;
+	private String raca;
 	
-	private String time;
-	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getTime() {
-		return time;
-	}
-	public void setTime(String time) {
-		this.time = time;
-	}
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
 	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getRaca() {
+		return raca;
+	}
+	public void setRaca(String raca) {
+		this.raca = raca;
+	}
 	
 	
 	
+
 }
