@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import cadastroAnimais.cadastroAnimais.model.Animal;
@@ -59,6 +61,33 @@ public class AnimalController {
 		return"redirect:/listaAnimaisRota";
 		
 	}
+	
+	@RequestMapping("/editarAnimalRota")
+	public ModelAndView editarAnimal(long id) {
+	
+		Animal animalEncontrado = animalRepository.findById(id);
+	
+		ModelAndView modelAndViewAnimal = new ModelAndView("editarAnimal");
+		
+		modelAndViewAnimal.addObject("animal", animalEncontrado );
+		
+	
+		return modelAndViewAnimal;
+		
+	}
+	
+	@PostMapping("/editarAnimalRota")
+	public String editarAnimalPost(Animal animal) {
+	
+		animalRepository.save(animal);
+		
+	
+		return "redirect:/listaAnimaisRota";
+		
+	}
+	
+	
+	
 	
 	
 	

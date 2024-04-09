@@ -13,6 +13,7 @@
 				<th>Nome</th>
 				<th>Raca</th>
 				<th>deletar</th>
+				<th>editar</th>
 				
 			</tr>
 		</thead>
@@ -22,7 +23,14 @@
 				<td th:text="${animal.id}"></td>
 				<td th:text="${animal.nome}"></td>
 				<td th:text="${animal.raca}"></td>
-				<td><a th:href="${(#mvc.url('AC#deletarAnimal').arg(0, animal.id)).build()}" >deletar</a></td>
+				<td>
+					<a th:href="${(#mvc.url('AC#deletarAnimal').arg(0, animal.id)).build()}" >deletar</a>
+				</td>
+				
+				<td>
+					<a th:href="${(#mvc.url('AC#editarAnimal').arg(0, animal.id)).build()}" >editar</a>
+				</td>
+				
 			
 			</tr>
 		</tbody>
