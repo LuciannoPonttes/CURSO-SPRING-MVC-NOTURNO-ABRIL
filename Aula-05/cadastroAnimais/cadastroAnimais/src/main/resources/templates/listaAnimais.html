@@ -9,14 +9,21 @@
 	<table>
 		<thead>
 			<tr>
+				<th>Id<th>
 				<th>Nome</th>
 				<th>Raca</th>
+				<th>deletar</th>
+				
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="animal : ${animais}">
+				
+				<td th:text="${animal.id}"></td>
 				<td th:text="${animal.nome}"></td>
 				<td th:text="${animal.raca}"></td>
+				<td><a th:href="${(#mvc.url('AC#deletarAnimal').arg(0, animal.id)).build()}" >deletar</a></td>
+			
 			</tr>
 		</tbody>
 	</table>

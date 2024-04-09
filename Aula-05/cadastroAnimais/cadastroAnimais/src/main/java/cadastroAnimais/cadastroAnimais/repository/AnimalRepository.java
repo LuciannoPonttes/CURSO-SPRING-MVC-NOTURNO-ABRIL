@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import cadastroAnimais.cadastroAnimais.model.Animal;
 
 @Repository
-public interface AnimalRepository extends CrudRepository<Animal, String> {
+public interface AnimalRepository extends CrudRepository<Animal, Long> {
 
+	//Para Encontrar o animal pelo ID
+	Animal findById(long id);
 }
