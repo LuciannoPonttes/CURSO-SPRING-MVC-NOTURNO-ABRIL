@@ -4,13 +4,23 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-	<body>
-		
-		<div th:each="animal : ${animais}" >
-			<p><span th:text="${animal.nome}"></p>
-			
-		</div>
+<body>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Raca</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="animal : ${animais}">
+				<td th:text="${animal.nome}"></td>
+				<td th:text="${animal.raca}"></td>
+			</tr>
+		</tbody>
+	</table>
 
 
-	</body>
+</body>
 </html>
