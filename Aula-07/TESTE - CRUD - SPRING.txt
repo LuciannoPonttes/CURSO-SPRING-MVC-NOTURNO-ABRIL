@@ -11,6 +11,7 @@ Cadastrar Produto (Create):
 Crie uma função que permita ao usuário cadastrar um novo produto no estoque.
 O usuário deve ser solicitado a fornecer o nome do produto, preço unitário e quantidade inicial em estoque.
 O sistema deve armazenar essas informações em uma estrutura de dados adequada.
+
 Visualizar Produtos (Read):
 
 Implemente uma função que exiba todos os produtos disponíveis no estoque, juntamente com suas quantidades e preços.
@@ -45,5 +46,6 @@ ATRIBUTOS:
 Nome do Produto: O nome ou descrição do produto.
 Preço Unitário: O preço de venda de uma unidade do produto.
 Quantidade em Estoque: A quantidade disponível do produto em estoque.
+
 Esses atributos são essenciais para garantir que o sistema possa funcionar corretamente, permitindo que os usuários cadastrem novos produtos, atualizem suas quantidades e preços, visualizem informações relevantes e realizem operações de cálculo sobre o estoque. Novamente, peço desculpas pela omissão e agradeço por chamar atenção para esse ponto importante.
 

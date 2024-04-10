@@ -34,7 +34,7 @@ public class AnimalController {
 		
 		animalRepository.save(animal);// Chama o metodo salvar do repositorio
 		
-		return "cadastroAnimal";
+		return"redirect:/listaAnimaisRota";
 	}
 	
 	@GetMapping("/listaAnimaisRota")

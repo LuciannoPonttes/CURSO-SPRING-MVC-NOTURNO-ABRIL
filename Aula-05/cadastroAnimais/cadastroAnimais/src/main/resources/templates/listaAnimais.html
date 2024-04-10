@@ -1,40 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<!-- Adicionando Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-	<table>
+	<table class="table">
 		<thead>
 			<tr>
-				<th>Id<th>
+				<th>Id</th>
 				<th>Nome</th>
 				<th>Raca</th>
-				<th>deletar</th>
-				<th>editar</th>
-				
+				<th>Deletar</th>
+				<th>Editar</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="animal : ${animais}">
 				
 				<td th:text="${animal.id}"></td>
+				
 				<td th:text="${animal.nome}"></td>
+				
 				<td th:text="${animal.raca}"></td>
 				<td>
-					<a th:href="${(#mvc.url('AC#deletarAnimal').arg(0, animal.id)).build()}" >deletar</a>
+					<a th:href="${(#mvc.url('AC#deletarAnimal').arg(0, animal.id)).build()}" class="btn btn-danger">Deletar</a>
 				</td>
-				
 				<td>
-					<a th:href="${(#mvc.url('AC#editarAnimal').arg(0, animal.id)).build()}" >editar</a>
+					<a th:href="${(#mvc.url('AC#editarAnimal').arg(0, animal.id)).build()}" class="btn btn-primary">Editar</a>
 				</td>
-				
-			
 			</tr>
 		</tbody>
 	</table>
+
 
 
 </body>
