@@ -31,15 +31,47 @@ public class PessoaController {
         return (List) pessoaRepository.findAll();
     }
 
-    @GetMapping("/buscarPessoaRota/{id}")
-    public ResponseEntity<PessoaModel> getUsersById(@PathVariable(value = "id") long pessoaId)
+    @GetMapping("/PessoaRota/{id}")
+    public ResponseEntity<PessoaModel> buscarUsuarioPeloID(@PathVariable(value = "id") long pessoaId)
             throws ResourceNotFoundException {
         PessoaModel pessoaModel =
                 pessoaRepository
-                        .findById(pessoaId)
+                        .findById(pessoaId) // busca a pessoa
+                        //Caso não encontre, ele entra na exeption
                         .orElseThrow(() -> new ResourceNotFoundException("Não existe pessoa com o ID: " + pessoaId));
+
         return ResponseEntity.ok().body(pessoaModel);
     }
+
+    @DeleteMapping( "/PessoaRota/{id}")
+    public String deletarPessoa(@PathVariable(value = "id") long pessoaId)
+          throws ResourceNotFoundException {
+            PessoaModel pessoaModel =
+                    pessoaRepository
+                            .findById(pessoaId) // busca a pessoa
+                            //Caso não encontre, ele entra na exeption
+                            .orElseThrow(() -> new ResourceNotFoundException("Não existe pessoa com o ID: " + pessoaId));
+                            pessoaRepository.delete(pessoaModel);
+            return pessoaModel.getNome() + "Deletado";
+    }
+
+    @PutMapping( "/PessoaRota/")
+    public String alterarPessoa(@RequestBody PessoaModel pessoaModelRequest)
+            throws ResourceNotFoundException {
+        PessoaModel pessoaModel =
+                pessoaRepository
+                        .findById(pessoaModelRequest.getId()) // busca a pessoa
+                        //Caso não encontre, ele entra na exeption
+                        .orElseThrow(() -> new ResourceNotFoundException("Não existe pessoa com o ID: " + pessoaModelRequest.getId()));
+
+        //pessoaModelRequest.setId(5000);
+        pessoaRepository.save(pessoaModelRequest);
+        return pessoaModelRequest.getNome() + " Foi Alterado";
+    }
+
+
+
+
 
 
 }
