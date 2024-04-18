@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class PhotoResponse {
 
+
     private long id;
     private String title;
 
