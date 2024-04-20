@@ -64,14 +64,10 @@ public class PessoaController {
                         //Caso não encontre, ele entra na exeption
                         .orElseThrow(() -> new ResourceNotFoundException("Não existe pessoa com o ID: " + pessoaModelRequest.getId()));
 
-        //pessoaModelRequest.setId(5000);
+
         pessoaRepository.save(pessoaModelRequest);
         return pessoaModelRequest.getNome() + " Foi Alterado";
     }
-
-
-
-
 
 
 }

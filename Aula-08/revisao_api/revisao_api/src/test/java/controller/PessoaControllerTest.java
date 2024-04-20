@@ -28,6 +28,8 @@ public class PessoaControllerTest {
     @InjectMocks
     private PessoaController pessoaController;
 
+
+    //Teste do endpoint e buscar usuario pelo id, quando ele existe.
     @Test
     public void buscarUsuarioPeloIdTest_SeExiste() throws ResourceNotFoundException{
 
@@ -45,8 +47,10 @@ public class PessoaControllerTest {
         //Simular a chamada do metodo findById
         when(pessoaRepository.findById(idTeste)).thenReturn(Optional.of(pessoaModelEsperadoTeste));
 
+        //Chama o Controller passando o ID
         ResponseEntity<PessoaModel> response = pessoaController.buscarUsuarioPeloID(idTeste);
 
+        // Verifica o status code do response
         assertEquals(HttpStatus.OK, response.getStatusCode());
 
         assertEquals(pessoaModelEsperadoTeste, response.getBody());
@@ -66,6 +70,33 @@ public class PessoaControllerTest {
         });
 
         assertEquals("Não existe pessoa com o ID: " + idTeste, exception.getLocalizedMessage());
+
+
+    }
+    @Test
+    public void alterarPessoaTest_Correto() throws ResourceNotFoundException{
+        long idTeste = 103; //ID de teste
+        //É a pessoa esperada
+        PessoaModel pessoaModelEsperadoTeste = new PessoaModel();
+        pessoaModelEsperadoTeste.setId(103);
+        pessoaModelEsperadoTeste.setNome("UsuarioTeste");
+        pessoaModelEsperadoTeste.setEmail("UsuarioTeste@gmail.com");
+        pessoaModelEsperadoTeste.setCpf("999.999.999-99");
+
+
+        //Alteração
+        PessoaModel pessoaModelEsperadoTesteAlterada = new PessoaModel();
+        pessoaModelEsperadoTesteAlterada.setId(103);
+        pessoaModelEsperadoTesteAlterada.setNome("UsuarioTesteAlterado");
+        pessoaModelEsperadoTesteAlterada.setEmail("UsuarioTeste@gmail.com");
+        pessoaModelEsperadoTesteAlterada.setCpf("999.999.999-99");
+
+        when(pessoaRepository.findById(idTeste)).thenReturn(Optional.of(pessoaModelEsperadoTeste));
+
+        String response  = pessoaController.alterarPessoa(pessoaModelEsperadoTesteAlterada);
+
+
+        assertEquals("UsuarioTesteAlterado Foi Alterado", response );
 
 
     }
